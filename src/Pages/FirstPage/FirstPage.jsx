@@ -1,9 +1,7 @@
+import FoodieImg from "../../assets/";
+
 const FirstPage = () => {
-  return (
-    <div>
-      <h1>Next Page 🎉</h1>
-    </div>
-  );
+  return <div className="flex justify-center items-center"></div>;
 };
 
 export default FirstPage;

@@ -8,6 +8,9 @@ export default {
     extend: {
       colors: {
         firstPageBg: "rgba(121, 73, 0, 1)",
+        spinnerBg: "#89664C",
+        // spinnerBg1: "#664E27",
+        secondPage: "#794900",
       }
     },
   },
