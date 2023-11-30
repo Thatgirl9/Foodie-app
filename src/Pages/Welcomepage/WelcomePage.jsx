@@ -28,7 +28,12 @@ const WelcomePage = () => {
 
         <div className="bg-firstPageBg h-screen flex justify-center items-center">
           <div className="flex justify-center items-center flex-col gap-4">
-            <img src={FoodieImg} width="150px" height="192" />
+            <img
+              src={FoodieImg}
+              width="150px"
+              height="192px"
+              alt="Foodie Icon"
+            />
 
             <Spinner />
           </div>

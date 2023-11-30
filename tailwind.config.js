@@ -10,7 +10,13 @@ export default {
         firstPageBg: "rgba(121, 73, 0, 1)",
         spinnerBg: "#89664C",
         // spinnerBg1: "#664E27",
-        secondPage: "#794900",
+        secondPageBg: "rgba(255, 251, 245, 1)",
+        secondPageBtn: "#794900",
+      },
+
+      fontFamily: {
+        header: "Martel Sans, sans-serif",
+        body: "Montserrat, sans-serif",
       }
     },
   },
