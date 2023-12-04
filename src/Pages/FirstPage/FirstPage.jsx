@@ -18,6 +18,7 @@ const slides = [
     h2Tag2: "at your doorstep",
     pTag1: "Your ready ordered meal would",
     pTag2: "be delivered  in seconds!",
+    fullScreen: true,
   },
   // Add more slides as needed
 ];
@@ -36,7 +37,7 @@ const FirstPage = () => {
 
   return (
     // Main Body Div
-    <div className="flex justify-center items-center flex-col gap-3 text-center bg-secondPageBg w-full">
+    <div className="flex justify-center items-center flex-col gap-3 text-center bg-secondPageBg w-full relative overflow-hidden ">
       {/* Second Page body div */}
 
       {/* Foodie Logo */}
@@ -44,33 +45,38 @@ const FirstPage = () => {
         <img src={FoodieImg2} width="139px" height="47px" alt="Foodie Logo" />
       </div>
 
-      <div className="text-center flex flex-col gap-8 w-[90%] h-[80%]">
+      <div
+        className="text-center flex w-screen h-[80%] transition-transform duration-500 ease-in-out transform"
+        style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+      >
         {/*  Slide */}
-        <div className=" h-[]">
-          {/* Image */}
-          <div className="flex justify-center items-center border-2">
-            <img
-              src={slides[activeIndex].img}
-              width="250px"
-              height=""
-              alt="Meal"
-            />
-          </div>
+        {slides.map((slide, index) => (
+          <div
+            key={index}
+            className={`flex-shrink-0  h-full 
+          ${slide.fullScreen ? "w-full" : "w-screen"}`}
+          >
+            {/* Image */}
+            <div className="flex justify-center items-center">
+              <img src={slide.img} width="250px" height="" alt="Meal" />
+            </div>
 
-          {/* Text */}
-          <div className="mt-5">
-            <h2 className="font-header text-2xl font-[800]">
-              {slides[activeIndex].h2Tag1}
-              <br></br>
-              {slides[activeIndex].h2Tag2}
-            </h2>
-            <p className="font-body text-sm font-medium mt-4">
-              {slides[activeIndex].pTag1}
-              <br></br>
-              {slides[activeIndex].pTag2}
-            </p>
+            {/* Text */}
+            <div className="mt-5">
+              <h2 className="font-header text-2xl font-[800]">
+                {slide.h2Tag1}
+                <br></br>
+                {slide.h2Tag2}
+              </h2>
+              <p className="font-body text-sm font-medium mt-4">
+                {slide.pTag1}
+                <br></br>
+                {slide.pTag2}
+              </p>
+            </div>
           </div>
-        </div>
+        ))}
+
         {/* End of  slide */}
       </div>
 
