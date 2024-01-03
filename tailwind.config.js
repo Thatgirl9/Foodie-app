@@ -12,6 +12,9 @@ export default {
         // spinnerBg1: "#664E27",
         secondPageBg: "rgba(255, 251, 245, 1)",
         secondPageBtn: "#794900",
+        inputBtn: "#F3F3F3",
+        placeholder: "#0000008C",
+
       },
 
       fontFamily: {
