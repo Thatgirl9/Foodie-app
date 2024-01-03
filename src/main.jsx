@@ -5,11 +5,20 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import WelcomePage from "./Pages/Welcomepage/WelcomePage";
 import SignIn from "./Pages/SignInPage/SignIn";
+import FirstPage from "./Pages/FirstPage/FirstPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <WelcomePage />,
+  },
+  {
+    path: "/firstpage",
+    element: <FirstPage />,
+  },
+  {
+    path: "/signin",
+    element: <SignIn />,
   },
 ]);
 

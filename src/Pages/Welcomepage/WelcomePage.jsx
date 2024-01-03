@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import FoodieImg from "../../assets/Group 3.png";
+import FoodieImg from "../../assets/WelcomePage/Group 3.png";
 
 import FirstPage from "../FirstPage/FirstPage";
 import Spinner from "../../Components/Spinner";

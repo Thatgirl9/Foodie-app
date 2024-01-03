@@ -1,8 +1,9 @@
-import FoodieImg2 from "../../assets/Group 2.png";
-import ImageSlide1 from "../../assets/Group 65.png";
-import ImageSlide2 from "../../assets/Group 66.png";
+import FoodieImg2 from "../../assets/FirstPage/Group 2.png";
+import ImageSlide1 from "../../assets/FirstPage/Group 65.png";
+import ImageSlide2 from "../../assets/FirstPage/Group 66.png";
 
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const slides = [
   {
@@ -87,12 +88,16 @@ const FirstPage = () => {
 
       {/* BUTTONS */}
       <div className="flex justify-center items-center flex-col gap-3 mt-7 w-[90%] mb-7">
-        <button className="bg-secondPageBtn text-white w-full h-12 rounded-md font-semibold hover:cursor-pointer hover:transition-all">
-          Sign Up
-        </button>
-        <button className="bg-transparent border border-secondPageBtn font-semibold h-12 w-full  rounded-md text-secondPageBtn hover:cursor-pointer">
-          Sign In
-        </button>
+        <Link className="bg-secondPageBtn text-white w-full h-12 rounded-md font-semibold hover:cursor-pointer hover:transition-all items-center justify-center flex">
+          <button>Sign Up</button>
+        </Link>
+
+        <Link
+          to="/signin"
+          className="bg-transparent border border-secondPageBtn font-semibold h-12 w-full  rounded-md text-secondPageBtn hover:cursor-pointer items-center justify-center flex"
+        >
+          <button>Sign In</button>
+        </Link>
       </div>
     </div>
   );
