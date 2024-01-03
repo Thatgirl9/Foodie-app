@@ -15,6 +15,7 @@ export default {
         inputBtn: "#F3F3F3",
         placeholder: "#0000008C",
 
+
       },
 
       fontFamily: {
