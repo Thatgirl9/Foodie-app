@@ -6,10 +6,16 @@ import Line from "../../assets/SignIn/Line 2.png";
 import GoogleLogo from "../../assets/SignIn/flat-color-icons_google.png";
 import AppleLogo from "../../assets/SignIn/ant-design_apple-filled.png";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import PasswordInput from "../../Components/PasswordInput";
 
 const SignIn = () => {
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    navigate(-1);
+  };
+
   const formSubmit = (e) => {
     e.preventDefault();
   };
@@ -17,11 +23,11 @@ const SignIn = () => {
   return (
     <div className="p-9 flex flex-col">
       <div className="mb-6">
-        <Link to="/firstpage">
-          <button>
-            <img src={ArrowLeft} width="24px" height="24px" alt="Left Arrow" />
-          </button>
-        </Link>
+        {/* <Link to="/firstpage"> */}
+        <button onClick={handleGoBack}>
+          <img src={ArrowLeft} width="24px" height="24px" alt="Left Arrow" />
+        </button>
+        {/* </Link> */}
       </div>
 
       <div className="mb-8">

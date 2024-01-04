@@ -88,7 +88,10 @@ const FirstPage = () => {
 
       {/* BUTTONS */}
       <div className="flex justify-center items-center flex-col gap-3 mt-7 w-[90%] mb-7">
-        <Link className="bg-secondPageBtn text-white w-full h-12 rounded-md font-semibold hover:cursor-pointer hover:transition-all items-center justify-center flex">
+        <Link
+          to="/signup"
+          className="bg-secondPageBtn text-white w-full h-12 rounded-md font-semibold hover:cursor-pointer hover:transition-all items-center justify-center flex"
+        >
           <button>Sign Up</button>
         </Link>
 

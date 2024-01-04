@@ -1,18 +1,24 @@
 import "./signup.css";
 
 import ArrowLeft from "../../assets/SignIn/bi_arrow-left.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import PasswordInput from "../../Components/PasswordInput";
 
 const SignUp = () => {
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    navigate(-1);
+  };
+
   return (
     <div className="p-9 flex flex-col">
       <div className="mb-6">
-        <Link to="/signin">
-          <button>
-            <img src={ArrowLeft} width="24px" height="24px" alt="Left Arrow" />
-          </button>
-        </Link>
+        {/* <Link to="/signin"> */}
+        <button onClick={handleGoBack}>
+          <img src={ArrowLeft} width="24px" height="24px" alt="Left Arrow" />
+        </button>
+        {/* </Link> */}
       </div>
       <div className="mb-8">
         <div className="flex gap-1 flex-col">
