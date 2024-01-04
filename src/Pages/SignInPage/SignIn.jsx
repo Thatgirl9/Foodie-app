@@ -78,9 +78,11 @@ const SignIn = () => {
           </div>
 
           <div>
-            <p className="text-secondPageBtn font-bold text-base font-body">
-              Forgot password?
-            </p>
+            <Link to="/forgotpassword">
+              <p className="text-secondPageBtn font-bold text-base font-body">
+                Forgot password?
+              </p>
+            </Link>
           </div>
         </div>
 
