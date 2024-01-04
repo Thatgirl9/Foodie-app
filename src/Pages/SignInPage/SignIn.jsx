@@ -61,16 +61,15 @@ const SignIn = () => {
             >
               Password
             </label>
-            <input
+            {/* <input
               type="password"
               name="password"
               id="password"
               className="w-full h-14 rounded-md px-4 bg-inputBtn font-body placeholder:font-medium placeholder:text-placeholder outline-none"
               placeholder="Your password"
-            />
+            /> */}
+            <PasswordInput />
           </div>
-
-          <PasswordInput />
 
           <div>
             <p className="text-secondPageBtn font-bold text-base font-body">
@@ -93,7 +92,7 @@ const SignIn = () => {
             <span className="font-medium text-sm text-placeholder">
               Don’t have an account?
             </span>
-            <Link>
+            <Link to="/signup">
               <span className="font-bold text-secondPageBtn">Sign Up</span>
             </Link>
           </p>
