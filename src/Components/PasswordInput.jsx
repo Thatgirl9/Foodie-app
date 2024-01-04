@@ -23,6 +23,7 @@ const PasswordInput = () => {
         onClick={handleTogglePassword}
         className="absolute right-0 top-1/2 transform -translate-y-1/2 mr-6 cursor-pointer"
       >
+        {/* FIRST SVG IS THE OPEN ICON, SECOND SVG IS THE CLOSED ICON*/}
         {showPassword ? (
           <svg
             xmlns="http://www.w3.org/2000/svg"

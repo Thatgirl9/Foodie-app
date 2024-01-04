@@ -26,7 +26,7 @@ const SignIn = () => {
 
       <div className="mb-8">
         <div className="flex gap-2">
-          <p className="font-header text-2xl font-extrabold ">Welcome back</p>
+          <p className="font-header text-2xl font-[900] ">Welcome back</p>
           <span>
             <img src={Hands} alt="Waving Emoji" width="22px" height="22px" />
           </span>
