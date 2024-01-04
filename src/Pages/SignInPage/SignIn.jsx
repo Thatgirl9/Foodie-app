@@ -7,8 +7,13 @@ import GoogleLogo from "../../assets/SignIn/flat-color-icons_google.png";
 import AppleLogo from "../../assets/SignIn/ant-design_apple-filled.png";
 
 import { Link } from "react-router-dom";
+import PasswordInput from "../../Components/PasswordInput";
 
 const SignIn = () => {
+  const formSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className="p-9 flex flex-col">
       <div className="mb-6">
@@ -31,7 +36,7 @@ const SignIn = () => {
         </div>
       </div>
 
-      <form action="">
+      <form action="" onSubmit={formSubmit}>
         <div className="flex flex-col gap-4">
           <div>
             <label
@@ -65,6 +70,8 @@ const SignIn = () => {
             />
           </div>
 
+          <PasswordInput />
+
           <div>
             <p className="text-secondPageBtn font-bold text-base font-body">
               Forgot password?
@@ -73,7 +80,10 @@ const SignIn = () => {
         </div>
 
         <div className="flex justify-center items-center mt-6 mb-3">
-          <button className="bg-secondPageBtn text-white w-full h-14 rounded-md font-semibold hover:cursor-pointer hover:transition-all items-center justify-center flex">
+          <button
+            className="bg-secondPageBtn text-white w-full h-14 rounded-md font-semibold hover:cursor-pointer hover:transition-all items-center justify-center flex"
+            type="submit"
+          >
             Login
           </button>
         </div>
