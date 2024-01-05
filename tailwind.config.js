@@ -16,6 +16,7 @@ export default {
         placeholder: "#0000008C",
         forgotEmail: '#7949001A',
         forgotPhone: "#6B6B6B",
+        verificationInput: "#BCA27B38",
       },
 
       fontFamily: {
