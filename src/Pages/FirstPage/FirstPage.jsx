@@ -90,14 +90,14 @@ const FirstPage = () => {
       <div className="flex justify-center items-center flex-col gap-3 mt-7 w-[90%] mb-7">
         <Link
           to="/signup"
-          className="bg-secondPageBtn text-white w-full h-12 rounded-md font-semibold hover:cursor-pointer hover:transition-all items-center justify-center flex"
+          className="bg-secondPageBtn text-white w-full h-14 rounded-md font-bold font-header hover:cursor-pointer hover:transition-all items-center justify-center flex"
         >
           <button>Sign Up</button>
         </Link>
 
         <Link
           to="/signin"
-          className="bg-transparent border border-secondPageBtn font-semibold h-12 w-full  rounded-md text-secondPageBtn hover:cursor-pointer items-center justify-center flex"
+          className="bg-transparent border border-secondPageBtn font-bold font-header h-14 w-full  rounded-md text-secondPageBtn hover:cursor-pointer items-center justify-center flex"
         >
           <button>Sign In</button>
         </Link>

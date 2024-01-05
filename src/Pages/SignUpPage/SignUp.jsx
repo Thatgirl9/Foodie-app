@@ -8,7 +8,11 @@ const SignUp = () => {
   const navigate = useNavigate();
 
   const handleGoBack = () => {
-    navigate(-1);
+    if (navigate(-1) === navigate("./welcomepage")) {
+      navigate("./firstpage");
+    } else {
+      navigate(-1);
+    }
   };
 
   return (
@@ -32,6 +36,7 @@ const SignUp = () => {
           </div>
         </div>
       </div>
+
       <form action="">
         <div className="flex flex-col gap-5">
           <div>
@@ -76,7 +81,7 @@ const SignUp = () => {
 
         <div className="flex justify-center items-center mt-9 mb-3">
           <button
-            className="bg-secondPageBtn text-white w-full h-14 rounded-md font-semibold hover:cursor-pointer hover:transition-all items-center justify-center flex"
+            className="bg-secondPageBtn text-white w-full h-14 rounded-md font-bold font-header hover:cursor-pointer hover:transition-all items-center justify-center flex"
             type="submit"
           >
             Sign Up

@@ -11,7 +11,7 @@ import ForgotPassword from "./Pages/ForgotPasswordPage/ForgotPw";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/welcomepage",
     element: <WelcomePage />,
   },
   {

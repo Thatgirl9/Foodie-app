@@ -14,8 +14,8 @@ export default {
         secondPageBtn: "#794900",
         inputBtn: "#F3F3F3",
         placeholder: "#0000008C",
-
-
+        forgotEmail: '#7949001A',
+        forgotPhone: "#6B6B6B",
       },
 
       fontFamily: {

@@ -13,7 +13,11 @@ const SignIn = () => {
   const navigate = useNavigate();
 
   const handleGoBack = () => {
-    navigate(-1);
+    if (navigate(-1) === navigate("./welcomepage")) {
+      navigate("./firstpage");
+    } else {
+      navigate(-1);
+    }
   };
 
   const formSubmit = (e) => {
@@ -88,7 +92,7 @@ const SignIn = () => {
 
         <div className="flex justify-center items-center mt-6 mb-3">
           <button
-            className="bg-secondPageBtn text-white w-full h-14 rounded-md font-semibold hover:cursor-pointer hover:transition-all items-center justify-center flex"
+            className="bg-secondPageBtn text-white w-full h-14 rounded-md font-bold font-header hover:cursor-pointer hover:transition-all items-center justify-center flex"
             type="submit"
           >
             Login
@@ -111,11 +115,11 @@ const SignIn = () => {
         <div>
           <p className="flex items-center w-full gap-4 justify-center font-body">
             <span>
-              <img src={Line} alt="Line" width="113px" height="1px" />
+              <img src={Line} alt="Line" width="90px" height="1px" />
             </span>
             <span>Or with</span>
             <span>
-              <img src={Line} alt="Line" width="113px" height="1px" />
+              <img src={Line} alt="Line" width="90px" height="1px" />
             </span>
           </p>
         </div>
