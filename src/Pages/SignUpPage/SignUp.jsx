@@ -15,6 +15,10 @@ const SignUp = () => {
     }
   };
 
+  const formSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className="p-9 flex flex-col">
       <div className="mb-6">
@@ -37,7 +41,7 @@ const SignUp = () => {
         </div>
       </div>
 
-      <form action="">
+      <form action="" onSubmit={formSubmit}>
         <div className="flex flex-col gap-5">
           <div>
             <label htmlFor="name" className="text-base font-semibold font-body">
@@ -80,12 +84,12 @@ const SignUp = () => {
         </div>
 
         <div className="flex justify-center items-center mt-9 mb-3">
-          <button
+          <Link
+            to="/verificationpage"
             className="bg-secondPageBtn text-white w-full h-14 rounded-md font-bold font-header hover:cursor-pointer hover:transition-all items-center justify-center flex"
-            type="submit"
           >
-            Sign Up
-          </button>
+            <button type="submit">Sign Up</button>
+          </Link>
         </div>
 
         <div className="flex justify-center ">

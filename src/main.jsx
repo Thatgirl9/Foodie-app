@@ -8,6 +8,7 @@ import SignIn from "./Pages/SignInPage/SignIn";
 import FirstPage from "./Pages/FirstPage/FirstPage";
 import SignUp from "./Pages/SignUpPage/SignUp";
 import ForgotPassword from "./Pages/ForgotPasswordPage/ForgotPw";
+import VerificationPage from "./Pages/VerificationPage/VerificationPage";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: "/forgotpassword",
     element: <ForgotPassword />,
+  },
+  {
+    path: "/verificationpage",
+    element: <VerificationPage />,
   },
 ]);
 
