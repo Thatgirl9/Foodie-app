@@ -4,8 +4,14 @@ const PasswordInput = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
 
-  const handleTogglePassword = () => {
+  const handleTogglePassword = ({ onPasswordChange }) => {
     setShowPassword(!showPassword);
+  };
+
+  const handlePasswordChange = (e) => {
+    const newPassword = e.target.value;
+    setPassword(newPassword);
+    onPasswordChange(newPassword);
   };
 
   return (
@@ -14,7 +20,7 @@ const PasswordInput = () => {
         id="password"
         type={showPassword ? "text" : "password"}
         value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        onChange={handlePasswordChange}
         placeholder=" Your password"
         className="w-full h-14 rounded-md px-4 bg-inputBtn font-body placeholder:font-medium placeholder:text-placeholder outline-none"
       />
