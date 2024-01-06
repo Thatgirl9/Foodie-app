@@ -11,8 +11,12 @@ const SignUp = () => {
   // Validating Email and Name.
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [nameError, setNameError] = useState("");
   const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [formError, setFormError] = useState("");
+  const [submitted, setSubmitted] = useState(false);
 
   // Go back to previous page
   const handleGoBack = () => {
@@ -60,19 +64,42 @@ const SignUp = () => {
     setEmail(newEmail);
   };
 
+  // Validating Password Function
+  const handlePasswordValid = (newPassword) => {
+    setPassword(newPassword);
+    // No Logic needed
+    setPasswordError("");
+  };
+
   // Preventing reloading of the page
   const formSubmit = (e) => {
     e.preventDefault();
+    console.log("Submitted");
+    // Check if both name, email and password are filled
+    if (!name || !email || !password) {
+      setFormError("All inputs must be filled.");
+      return;
+    }
+
+    // To save user details and password in localStorage, not safe though
+    localStorage.setItem(
+      "userDetails",
+      JSON.stringify({ name, email, password })
+    );
+
+    // Set submitted to true
+    setSubmitted(true);
+
+    // Navigate to the next page after form has been filled
+    navigate("/signup/verificationpage");
   };
 
   return (
     <div className="p-9 flex flex-col">
       <div className="mb-6">
-        {/* <Link to="/signin"> */}
         <button onClick={handleGoBack}>
           <img src={ArrowLeft} width="24px" height="24px" alt="Left Arrow" />
         </button>
-        {/* </Link> */}
       </div>
       <div className="mb-8">
         <div className="flex gap-1 flex-col">
@@ -87,7 +114,7 @@ const SignUp = () => {
         </div>
       </div>
 
-      <form action="" onSubmit={formSubmit}>
+      <form onSubmit={formSubmit}>
         <div className="flex flex-col gap-5">
           <div>
             <label htmlFor="name" className="text-base font-semibold font-body">
@@ -145,17 +172,23 @@ const SignUp = () => {
             >
               Password
             </label>
-            <PasswordInput />
+            <PasswordInput onPasswordChange={handlePasswordValid} />
+            {passwordError && <p>{passwordError}</p>}
           </div>
         </div>
 
+        {formError && (
+          <p className="text-red-500 text-sm font-header mt-1">{formError}</p>
+        )}
+
         <div className="flex justify-center items-center mt-9 mb-3">
-          <Link
-            to="/verificationpage"
+          <button
+            type="submit"
             className="bg-secondPageBtn text-white w-full h-14 rounded-md font-bold font-header hover:cursor-pointer hover:transition-all items-center justify-center flex"
+            disabled={submitted}
           >
-            <button type="submit">Sign Up</button>
-          </Link>
+            Sign Up
+          </button>
         </div>
 
         <div className="flex justify-center ">

@@ -1,10 +1,18 @@
 import { useState } from "react";
 
-const PasswordInput = () => {
+import PropTypes from "prop-types";
+
+const PasswordInput = ({ onPasswordChange }) => {
+  // Component code here
+  // To validate the prop .onPasswordChange
+  PasswordInput.propTypes = {
+    onPasswordChange: PropTypes.func.isRequired,
+  };
+
   const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
 
-  const handleTogglePassword = ({ onPasswordChange }) => {
+  const handleTogglePassword = () => {
     setShowPassword(!showPassword);
   };
 
@@ -13,6 +21,8 @@ const PasswordInput = () => {
     setPassword(newPassword);
     onPasswordChange(newPassword);
   };
+
+  // Passing a Prop so that i can save the password input value to the storage even if it's own it's component.
 
   return (
     <div className="relative">

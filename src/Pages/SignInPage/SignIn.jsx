@@ -78,7 +78,7 @@ const SignIn = () => {
               className="w-full h-14 rounded-md px-4 bg-inputBtn font-body placeholder:font-medium placeholder:text-placeholder outline-none"
               placeholder="Your password"
             /> */}
-            <PasswordInput />
+            <PasswordInput onPasswordChange />
           </div>
 
           <div>
