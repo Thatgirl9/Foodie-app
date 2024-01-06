@@ -91,7 +91,7 @@ const SignUp = () => {
     setSubmitted(true);
 
     // Navigate to the next page after form has been filled
-    navigate("/signup/verificationpage");
+    navigate(`/signup/verificationpage/${email}`);
   };
 
   return (
@@ -153,6 +153,7 @@ const SignUp = () => {
               value={email}
               inputMode="email"
               onChange={handleEmailValid}
+              // onChange={(e) => setEmail(e.target.value)}
               className={`w-full h-14 rounded-md px-4 bg-inputBtn font-body placeholder:font-medium border placeholder:text-placeholder outline-none ${
                 emailError ? "border-red-500" : "border-inputBtn"
               }`}

@@ -2,10 +2,11 @@ import "./verification.css";
 
 import ArrowLeft from "../../assets/SignIn/bi_arrow-left.png";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 const VerificationPage = () => {
   const navigate = useNavigate();
+  const { email } = useSearchParams();
 
   const handleGoBack = () => {
     navigate(-1);
@@ -28,9 +29,7 @@ const VerificationPage = () => {
         <p className=" font-body ">
           <span className="font-medium">Kindly enter the code sent to</span>
           <br></br>
-          <span className="text-secondPageBtn font-semibold">
-            nkemachara0@gmail.com
-          </span>
+          <span className="text-secondPageBtn font-semibold">{email}</span>
         </p>
       </div>
 
