@@ -21,6 +21,7 @@ const generateRandomCode = () => {
 const VerificationPage = () => {
   const navigate = useNavigate();
   const { email } = useParams();
+  // eslint-disable-next-line no-unused-vars
   const [verificationCode, setVerificationCode] = useState(
     generateRandomCode()
   );
@@ -90,7 +91,10 @@ const VerificationPage = () => {
 
       {/* The Popup Message */}
       {showCodePopup && (
-        <PopUp onButtonClick={() => setShowCodePopup(false)}>
+        <PopUp
+          onButtonClick={() => setShowCodePopup(false)}
+          style={{ top: "6px", right: "5px" }}
+        >
           Your verification code: {verificationCode.join("")}
         </PopUp>
       )}
@@ -134,7 +138,7 @@ const VerificationPage = () => {
           type="button"
           onClick={checkVerificationCode}
         >
-          Verify
+          {verificationResult ? "Verified" : "Verify"}
         </button>
       </div>
 
@@ -148,6 +152,8 @@ const VerificationPage = () => {
             fontSize: "1rem",
             fontWeight: "bold",
             textAlign: "center",
+            bottom: "20px",
+            left: "10px",
           }}
         >
           {verificationResult

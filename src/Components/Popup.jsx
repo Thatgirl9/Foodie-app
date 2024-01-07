@@ -11,7 +11,7 @@ const PopUp = ({ children, buttonText, onButtonClick, style }) => {
   return (
     // <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-75 z-50">
     <div
-      className=" fixed top-4 right-3 bg-forgotEmail py-1 px-3 rounded-md shadow-md text-center border border-secondPageBtn translate-x-0 transition-all font-header"
+      className="fixed  bg-forgotEmail py-1 px-3 rounded-md shadow-md text-center border border-secondPageBtn transition-all font-header"
       style={style}
     >
       <p>{children}</p>
