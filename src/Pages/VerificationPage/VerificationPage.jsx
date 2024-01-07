@@ -2,11 +2,13 @@ import "./verification.css";
 
 import ArrowLeft from "../../assets/SignIn/bi_arrow-left.png";
 
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { useState } from "react";
 
 const VerificationPage = () => {
   const navigate = useNavigate();
-  const { email } = useSearchParams();
+  const { email } = useParams();
+  const [verificationCode, setVerificationCode] = useState("");
 
   const handleGoBack = () => {
     navigate(-1);
@@ -16,8 +18,22 @@ const VerificationPage = () => {
     e.preventDefault();
   };
 
+  // Create a random verification token
+  // const createToken = () => {
+  //   const token = Math.floor(Math.random() * 10000);
+  //   console.log(token);
+  //   setVerificationCode(token);
+  // };
+
+  // createToken();
+
+  const handleShowModal = () => {
+    const modal = document.querySelector(".modal");
+    modal.classList.toggle("show-modal");
+  };
+
   return (
-    <div className="p-9 flex flex-col">
+    <div className="p-9 flex flex-col relative justify-center">
       <div className="mb-6">
         <button onClick={handleGoBack}>
           <img src={ArrowLeft} width="24px" height="24px" alt="Left Arrow" />
@@ -32,6 +48,14 @@ const VerificationPage = () => {
           <span className="text-secondPageBtn font-semibold">{email}</span>
         </p>
       </div>
+
+      <div className="absolute  right-3 top-4 border-2 border-secondPageBtn flex justify-center items-center p-3 px-6 rounded-lg modal">
+        <p className="font-body text-base font-semibold text-secondPageBtn text-center tracking-wider">
+          2389
+        </p>
+      </div>
+
+      <button onClick={handleShowModal}>Modal</button>
 
       <form action="" onSubmit={formSubmit}>
         <div className="flex justify-center items-center gap-4">
@@ -63,6 +87,8 @@ const VerificationPage = () => {
             className="w-[55px] h-[55px] rounded-md px-5 bg-inputBtn font-body font-bold text-black  outline-none placeholder:font-bold placeholder:text-black focus:bg-verificationInput focus:border  focus:outline-none focus:border-secondPageBtn"
             placeholder="0"
           />
+
+          <p>{verificationCode}</p>
         </div>
 
         <div className="flex justify-center mt-6">

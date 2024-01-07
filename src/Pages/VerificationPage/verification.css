@@ -1,0 +1,8 @@
+.modal {
+  transform: translateX(120%);
+  transition: all 0.3s ease-in-out;
+}
+
+.show-modal {
+  transform: translateX(0);
+}
