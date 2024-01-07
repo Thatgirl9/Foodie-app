@@ -24,6 +24,7 @@ const VerificationPage = () => {
   const [verificationCode, setVerificationCode] = useState(
     generateRandomCode()
   );
+  // const verificationCode = generateRandomCode();
   const [userInput, setUserInput] = useState(["", "", "", ""]);
   const [showCodePopup, setShowCodePopup] = useState(true);
   const [showVerificationPopup, setShowVerificationPopup] = useState(false);
@@ -32,10 +33,6 @@ const VerificationPage = () => {
   const handleGoBack = () => {
     navigate(-1);
   };
-
-  // const formSubmit = (e) => {
-  //   e.preventDefault();
-  // };
 
   // Saving the user input
   const handleInputChange = (index, value) => {
@@ -49,6 +46,10 @@ const VerificationPage = () => {
     const isCodeCorrect = userInput.join("") === verificationCode.join("");
     setVerificationResult(isCodeCorrect);
     setShowVerificationPopup(true);
+
+    if (verificationResult) {
+      navigate("/homepage");
+    }
   };
 
   // Setting the verification code to disappear after  3 seconds using useEffect.
@@ -68,11 +69,6 @@ const VerificationPage = () => {
     }
 
     setShowVerificationPopup(false);
-  };
-
-  const handleShowModal = () => {
-    const modal = document.querySelector(".modal");
-    modal.classList.toggle("show-modal");
   };
 
   return (
@@ -109,35 +105,12 @@ const VerificationPage = () => {
             name="verificationCode"
             maxLength={1}
             value={userInput[index]}
-            onChange={e}
+            onChange={(e) => handleInputChange(index, e.target.value)}
             className={`w-[55px] h-[55px] rounded-md px-5 bg-inputBtn font-body font-bold text-black placeholder:font-bold placeholder:text-black focus:bg-verificationInput border  focus:outline-none ${
               verificationResult ? "border-green-500" : "border-secondPageBtn"
             }`}
           />
         ))}
-
-        <input
-          type="text"
-          inputMode="numeric"
-          className="w-[55px] h-[55px] rounded-md bg-inputBtn font-body font-bold text-black  outline-none placeholder:font-bold placeholder:text-black px-5 focus:bg-verificationInput focus:border  focus:outline-none focus:border-secondPageBtn"
-          placeholder="5"
-        />
-
-        <input
-          type="text"
-          inputMode="numeric"
-          className="w-[55px] h-[55px] rounded-md px-5 bg-inputBtn font-body font-bold text-black  outline-none placeholder:font-bold placeholder:text-black focus:bg-verificationInput focus:border  focus:outline-none focus:border-secondPageBtn"
-          placeholder="1"
-        />
-
-        <input
-          type="text"
-          inputMode="numeric"
-          className="w-[55px] h-[55px] rounded-md px-5 bg-inputBtn font-body font-bold text-black  outline-none placeholder:font-bold placeholder:text-black focus:bg-verificationInput focus:border  focus:outline-none focus:border-secondPageBtn"
-          placeholder="0"
-        />
-
-        {/* <p>{verificationCode}</p> */}
       </div>
 
       <div className="flex justify-center mt-6">
@@ -146,19 +119,42 @@ const VerificationPage = () => {
             You didn’t get a code?
           </span>
 
-          <button className="font-bold text-secondPageBtn">Resend</button>
+          <button
+            onClick={() => setShowCodePopup(true)}
+            className="font-bold text-secondPageBtn"
+          >
+            Resend
+          </button>
         </p>
       </div>
 
       <div className="flex justify-center items-center mt-14 mb-3">
         <button
           className="bg-secondPageBtn text-white w-full h-16 rounded-xl font-bold hover:cursor-pointer hover:transition-all items-center justify-center flex font-header hover:border-secondPageBg hover:border"
-          type="submit"
+          type="button"
+          onClick={checkVerificationCode}
         >
           Verify
         </button>
       </div>
-      {/* </form> */}
+
+      {/* The Verification Text Popup */}
+      {showVerificationPopup && (
+        <PopUp
+          onButtonClick={handlePopupButtonClick}
+          style={{
+            color: verificationResult ? "green" : "red",
+            borderColor: verificationResult ? "green" : "red",
+            fontSize: "1rem",
+            fontWeight: "bold",
+            textAlign: "center",
+          }}
+        >
+          {verificationResult
+            ? "Verified"
+            : "Verification Failed. Please try again"}
+        </PopUp>
+      )}
     </div>
   );
 };
