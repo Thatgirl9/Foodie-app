@@ -24,6 +24,10 @@ const SignIn = () => {
     e.preventDefault();
   };
 
+  // const handleNextPage = () => {
+  //   navigate("/homepage");
+  // };
+
   return (
     <div className="p-9 flex flex-col">
       <div className="mb-6">

@@ -5,6 +5,7 @@ import EmailIcon from "../../assets/ForgotPw/dashicons_email-alt2.png";
 import PhoneIcon from "../../assets/ForgotPw/bxs_phone.png";
 
 import { useNavigate } from "react-router-dom";
+import PopUp from "../../Components/Popup";
 
 const ForgotPassword = () => {
   const navigate = useNavigate();
@@ -34,6 +35,15 @@ const ForgotPassword = () => {
           </div>
         </div>
       </div>
+
+      <PopUp style={{ top: "6px", right: "5px" }}>Sent!</PopUp>
+
+      {/* <PopUp
+          onButtonClick={() => setShowCodePopup(false)}
+          style={{ top: "6px", right: "5px" }}
+        >
+          Your verification code: {verificationCode.join("")}
+        </PopUp> */}
 
       <div className="flex justify-center items-center mt-9 mb-5">
         <button
