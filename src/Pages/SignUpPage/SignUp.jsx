@@ -20,7 +20,7 @@ const SignUp = () => {
 
   // Go back to previous page
   const handleGoBack = () => {
-    if (navigate(-1) === navigate("./welcomepage")) {
+    if (navigate(-1) === navigate("/")) {
       navigate("./firstpage");
     } else {
       navigate(-1);

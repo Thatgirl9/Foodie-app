@@ -13,7 +13,7 @@ import HomePage from "./Pages/HomePage/HomePage";
 
 const router = createBrowserRouter([
   {
-    path: "/welcomepage",
+    path: "/",
     element: <WelcomePage />,
   },
   {

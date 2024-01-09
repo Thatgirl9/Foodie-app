@@ -13,7 +13,7 @@ const SignIn = () => {
   const navigate = useNavigate();
 
   const handleGoBack = () => {
-    if (navigate(-1) === navigate("./welcomepage")) {
+    if (navigate(-1) === navigate("/")) {
       navigate("./firstpage");
     } else {
       navigate(-1);
@@ -75,13 +75,7 @@ const SignIn = () => {
             >
               Password
             </label>
-            {/* <input
-              type="password"
-              name="password"
-              id="password"
-              className="w-full h-14 rounded-md px-4 bg-inputBtn font-body placeholder:font-medium placeholder:text-placeholder outline-none"
-              placeholder="Your password"
-            /> */}
+
             <PasswordInput onPasswordChange />
           </div>
 
