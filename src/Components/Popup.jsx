@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 
-const PopUp = ({ children, buttonText, onButtonClick, style }) => {
+const PopUp = ({ children, style }) => {
   PopUp.propTypes = {
     children: PropTypes.func.isRequired,
-    buttonText: PropTypes.func.isRequired,
-    onButtonClick: PropTypes.func.isRequired,
+    // buttonText: PropTypes.func.isRequired,
+    // onButtonClick: PropTypes.func.isRequired,
     style: PropTypes.func.isRequired,
   };
 
@@ -15,9 +15,9 @@ const PopUp = ({ children, buttonText, onButtonClick, style }) => {
       style={style}
     >
       <p>{children}</p>
-      <button type="button" className="h-0 w-0" onClick={onButtonClick}>
+      {/* <button type="button" className="h-0 w-0" onClick={onButtonClick}>
         {buttonText}
-      </button>
+      </button> */}
     </div>
     // </div>
   );

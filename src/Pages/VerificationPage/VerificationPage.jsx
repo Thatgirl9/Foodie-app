@@ -64,13 +64,13 @@ const VerificationPage = () => {
     return () => clearTimeout(timeout);
   }, []);
 
-  const handlePopupButtonClick = () => {
-    if (verificationResult) {
-      navigate("/homepage");
-    }
+  // const handlePopupButtonClick = () => {
+  //   if (verificationResult) {
+  //     navigate("/homepage");
+  //   }
 
-    setShowVerificationPopup(false);
-  };
+  //   setShowVerificationPopup(false);
+  // };
 
   return (
     <div className="p-9 flex flex-col relative justify-center">
@@ -92,7 +92,7 @@ const VerificationPage = () => {
       {/* The Popup Message */}
       {showCodePopup && (
         <PopUp
-          onButtonClick={() => setShowCodePopup(false)}
+          // onButtonClick={() => setShowCodePopup(false)}
           style={{ top: "6px", right: "5px" }}
         >
           Your verification code: {verificationCode.join("")}
@@ -145,19 +145,19 @@ const VerificationPage = () => {
       {/* The Verification Text Popup */}
       {showVerificationPopup && (
         <PopUp
-          onButtonClick={handlePopupButtonClick}
+          // onButtonClick={handlePopupButtonClick}
           style={{
             color: verificationResult ? "green" : "red",
             borderColor: verificationResult ? "green" : "red",
-            fontSize: "1rem",
-            fontWeight: "bold",
+            fontSize: verificationResult ? "1.2rem" : "1rem",
+            fontWeight: verificationResult ? "800" : "700",
             textAlign: "center",
             bottom: "20px",
             left: "10px",
           }}
         >
           {verificationResult
-            ? "Verified"
+            ? "Verified!"
             : "Verification Failed. Please try again"}
         </PopUp>
       )}
