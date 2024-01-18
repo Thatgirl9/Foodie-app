@@ -3,11 +3,13 @@ import "./signin.css";
 import ArrowLeft from "../../assets/SignIn/bi_arrow-left.png";
 import Hands from "../../assets/SignIn/emojione_hand-with-fingers-splayed.png";
 import Line from "../../assets/SignIn/Line 2.png";
-import GoogleLogo from "../../assets/SignIn/flat-color-icons_google.png";
 import AppleLogo from "../../assets/SignIn/ant-design_apple-filled.png";
+// import GoogleLogo from "../assets/SignIn/flat-color-icons_google.png";
+import GoogleLogo from "../../assets/SignIn/flat-color-icons_google.png";
 
 import { Link, useNavigate } from "react-router-dom";
 import PasswordInput from "../../Components/PasswordInput";
+// import GoogleSignIn from "../../Components/GoogleSignIn";
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -123,19 +125,21 @@ const SignIn = () => {
         </div>
 
         <div className="flex justify-center items-center flex-col mt-12 gap-5">
-          <div className="w-full flex justify-center items-center">
-            <button className="flex items-center gap-2 text-secondPageBtn font-bold font-header border border-secondPageBtn h-14 rounded-md  hover:cursor-pointer hover:transition-all w-full justify-center">
-              <span>
-                <img
-                  src={GoogleLogo}
-                  alt="Google Icon"
-                  width="22px"
-                  height="22px"
-                />
-              </span>
-              Sign in with Google
-            </button>
-          </div>
+          {/* <GoogleSignIn /> */}
+          <button
+            className="flex items-center gap-2 text-secondPageBtn font-bold font-header border border-secondPageBtn h-14 rounded-md  hover:cursor-pointer hover:transition-all w-full justify-center"
+            // onClick={signInWithGoogle}
+          >
+            <span>
+              <img
+                src={GoogleLogo}
+                alt="Google Icon"
+                width="22px"
+                height="22px"
+              />
+            </span>
+            Sign in with Google
+          </button>
 
           <div className="w-full flex justify-center items-center">
             <button className="flex items-center gap-2 text-secondPageBtn font-bold font-header border border-secondPageBtn h-14 rounded-md  hover:cursor-pointer hover:transition-all w-full justify-center">
